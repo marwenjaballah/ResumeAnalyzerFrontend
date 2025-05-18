@@ -1,15 +1,15 @@
 export const env = {
   api: {
-    url: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5207',
-    endpoint: process.env.NEXT_PUBLIC_API_ENDPOINT || '/api/resume/analyze-gemini',
+    url: process.env.NEXT_PUBLIC_API_URL ,
+    endpoint: process.env.NEXT_PUBLIC_API_ENDPOINT ,
     get fullUrl() {
       return `${this.url}${this.endpoint}`
     }
   },
   site: {
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    name: process.env.NEXT_PUBLIC_SITE_NAME || 'Resume Analyzer',
-    description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'AI-Powered Resume Analysis Tool',
-    twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@MarwenJaballah'
+    url: process.env.NEXT_PUBLIC_SITE_URL ,
+    name: process.env.NEXT_PUBLIC_SITE_NAME ,
+    description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION ,
+    twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE 
   }
 } as const 
