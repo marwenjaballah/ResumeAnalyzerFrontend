@@ -1,15 +1,16 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { env } from "@/config/env"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Resume Analyzer | AI-Powered Resume Analysis",
-    template: "%s | Resume Analyzer"
+    default: `${env.site.name} | AI-Powered Resume Analysis`,
+    template: `%s | ${env.site.name}`
   },
-  description: "Get instant AI-powered analysis of your resume. Improve your chances of landing interviews with personalized suggestions, keyword matching, and section scores.",
+  description: env.site.description,
   keywords: [
     "resume analysis",
     "AI resume analyzer",
@@ -23,14 +24,14 @@ export const metadata: Metadata = {
     "resume feedback"
   ],
   authors: [{ name: "Marwen Jaballah" }],
-  creator: "Resume Analyzer",
-  publisher: "Resume Analyzer",
+  creator: env.site.name,
+  publisher: env.site.name,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(env.site.url),
   alternates: {
     canonical: "/",
   },
@@ -38,24 +39,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Resume Analyzer | AI-Powered Resume Analysis",
-    description: "Get instant AI-powered analysis of your resume. Improve your chances of landing interviews with personalized suggestions, keyword matching, and section scores.",
-    siteName: "Resume Analyzer",
+    title: `${env.site.name} | AI-Powered Resume Analysis`,
+    description: env.site.description,
+    siteName: env.site.name,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Resume Analyzer - AI-Powered Resume Analysis",
+        alt: `${env.site.name} - AI-Powered Resume Analysis`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resume Analyzer | AI-Powered Resume Analysis",
-    description: "Get instant AI-powered analysis of your resume. Improve your chances of landing interviews with personalized suggestions, keyword matching, and section scores.",
+    title: `${env.site.name} | AI-Powered Resume Analysis`,
+    description: env.site.description,
     images: ["/og-image.png"],
-    creator: "@MarwenJaballah",
+    creator: env.site.twitterHandle,
   },
   robots: {
     index: true,

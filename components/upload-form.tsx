@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { FileUpload } from "@/components/file-upload"
 import { JobTitleInput } from "@/components/job-title-input"
 import { ErrorDialog } from "@/components/error-dialog"
+import { env } from "@/config/env"
 
 // Common job title suggestions
 const JOB_TITLE_SUGGESTIONS = [
@@ -68,7 +69,7 @@ export default function UploadForm() {
       formData.append("resume", file)
       formData.append("jobTitle", jobTitle)
 
-      const API_URL = "http://localhost:5207/api/resume/analyze-gemini"
+      const API_URL = env.api.fullUrl
       console.log("Sending request to:", API_URL)
       console.log("FormData contents:", {
         fileName: file.name,
